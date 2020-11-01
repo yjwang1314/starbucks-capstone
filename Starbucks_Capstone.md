@@ -58,17 +58,17 @@
 ## 探索性数据分析
 此数据集约有30万个消费记录、1.7万顾客信息和10种推送记录。
 大部分的顾客都是男性。
-<img src="gender.png"/>
+<img src="pic/gender.png"/>
 
 移除特意值后，平均年龄是53岁，男顾客的平均年龄比女顾客小。
 
 收入的范围从3万到12万美元，均值61800，女顾客的平均收入更高，可能跟平均年龄大相关。
 
 平均消费金额只有14美元，但有长尾的现象，最高消费金额为1062美元。
-<img src="age_income_spend.png">
+<img src="pic/age_income_spend.png">
 
 “买一送一”的推送有更高的打开率，但转化率比折扣券低。
-<img src="offer_conver_funnel.png">
+<img src="pic/offer_conver_funnel.png">
 
 
 ## 聚类分析
@@ -77,24 +77,24 @@
 
 ### 2. 降维
 因k-means的算法适用与特征数量较小的情况，故适用PCA来进行将特征量降维到12个。
-<img src="pca.png">
+<img src="pic/pca.png">
 
 ### 3. 聚类分析
 用k-means方法给数据分类，用elbow方法和silhouette分数得到4个聚类。
-<img src="kmeans1.png">
-<img src="kmeans2.png">
-<img src="kmeans3.png">
+<img src="pic/kmeans1.png">
+<img src="pic/kmeans2.png">
+<img src="pic/kmeans3.png">
 
 之后也尝试用DBSCAN和OPTICS两种聚类方法，
-<img src="DBSCAN.png">
-<img src="OPTICS.png">
+<img src="pic/DBSCAN.png">
+<img src="pic/OPTICS.png">
 
 ## 模型评价与改进
 尽管DBSCNAN和OPTICS的聚类方法表现更好，但它们更强调性别与注册年份的差异，而对打开率和转化率的差异不明显，所以对调整实际营销策略的意义不是很大。
-<img src="OPTICS_result.png">
+<img src="pic/OPTICS_result.png">
 
 k-means的分类结果在打开率和转化率的差异明显，这对营销策略的调整更有指导意义，所以最后选择k-means的分类方法。
-<img src="kmeans_result.png">
+<img src="pic/kmeans_result.png">
 
 ## 结果讨论
 对此我们可以有以下结论：

@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Untitled</title>
+<title>Starbucks_Capstone</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13165,27 +13165,27 @@ div#notebook {
 </ol>
 <h2 id="&#25506;&#32034;&#24615;&#25968;&#25454;&#20998;&#26512;">&#25506;&#32034;&#24615;&#25968;&#25454;&#20998;&#26512;<a class="anchor-link" href="#&#25506;&#32034;&#24615;&#25968;&#25454;&#20998;&#26512;">&#182;</a></h2><p>此数据集约有30万个消费记录、1.7万顾客信息和10种推送记录。
 大部分的顾客都是男性。
-<img src="gender.png"/></p>
+<img src="pic/gender.png"/></p>
 <p>移除特意值后，平均年龄是53岁，男顾客的平均年龄比女顾客小。</p>
 <p>收入的范围从3万到12万美元，均值61800，女顾客的平均收入更高，可能跟平均年龄大相关。</p>
 <p>平均消费金额只有14美元，但有长尾的现象，最高消费金额为1062美元。
-<img src="age_income_spend.png"></p>
+<img src="pic/age_income_spend.png"></p>
 <p>“买一送一”的推送有更高的打开率，但转化率比折扣券低。
-<img src="offer_conver_funnel.png"></p>
+<img src="pic/offer_conver_funnel.png"></p>
 <h2 id="&#32858;&#31867;&#20998;&#26512;">&#32858;&#31867;&#20998;&#26512;<a class="anchor-link" href="#&#32858;&#31867;&#20998;&#26512;">&#182;</a></h2><h3 id="1.-&#29305;&#24449;&#32553;&#25918;">1. &#29305;&#24449;&#32553;&#25918;<a class="anchor-link" href="#1.-&#29305;&#24449;&#32553;&#25918;">&#182;</a></h3><p>利用StandardScaler来进行特征缩放，使各维度特征缩放到均值0，标准差1。</p>
 <h3 id="2.-&#38477;&#32500;">2. &#38477;&#32500;<a class="anchor-link" href="#2.-&#38477;&#32500;">&#182;</a></h3><p>因k-means的算法适用与特征数量较小的情况，故适用PCA来进行将特征量降维到12个。
-<img src="pca.png"></p>
+<img src="pic/pca.png"></p>
 <h3 id="3.-&#32858;&#31867;&#20998;&#26512;">3. &#32858;&#31867;&#20998;&#26512;<a class="anchor-link" href="#3.-&#32858;&#31867;&#20998;&#26512;">&#182;</a></h3><p>用k-means方法给数据分类，用elbow方法和silhouette分数得到4个聚类。
-<img src="kmeans1.png">
-<img src="kmeans2.png">
-<img src="kmeans3.png"></p>
+<img src="pic/kmeans1.png">
+<img src="pic/kmeans2.png">
+<img src="pic/kmeans3.png"></p>
 <p>之后也尝试用DBSCAN和OPTICS两种聚类方法，
-<img src="DBSCAN.png">
-<img src="OPTICS.png"></p>
+<img src="pic/DBSCAN.png">
+<img src="pic/OPTICS.png"></p>
 <h2 id="&#27169;&#22411;&#35780;&#20215;&#19982;&#25913;&#36827;">&#27169;&#22411;&#35780;&#20215;&#19982;&#25913;&#36827;<a class="anchor-link" href="#&#27169;&#22411;&#35780;&#20215;&#19982;&#25913;&#36827;">&#182;</a></h2><p>尽管DBSCNAN和OPTICS的聚类方法表现更好，但它们更强调性别与注册年份的差异，而对打开率和转化率的差异不明显，所以对调整实际营销策略的意义不是很大。
-<img src="OPTICS_result.png"></p>
+<img src="pic/OPTICS_result.png"></p>
 <p>k-means的分类结果在打开率和转化率的差异明显，这对营销策略的调整更有指导意义，所以最后选择k-means的分类方法。
-<img src="kmeans_result.png"></p>
+<img src="pic/kmeans_result.png"></p>
 <h2 id="&#32467;&#26524;&#35752;&#35770;">&#32467;&#26524;&#35752;&#35770;<a class="anchor-link" href="#&#32467;&#26524;&#35752;&#35770;">&#182;</a></h2><p>对此我们可以有以下结论：</p>
 <h3 id="&#32676;&#20307;1">&#32676;&#20307;1<a class="anchor-link" href="#&#32676;&#20307;1">&#182;</a></h3><p>此顾客群体收到了一定量的“买一送一”推送，基本很少打折推送。因此这些“买一送一”的推送让此群体得到的优惠是4个顾客群体中最多的。</p>
 <p>他们的消费频率和消费金额高于平均水平，因此<strong>建议对此群体的顾客继续定期地发“买一送一”的推送</strong>，因为此群体的顾客从打开率和转化率都很高。</p>
